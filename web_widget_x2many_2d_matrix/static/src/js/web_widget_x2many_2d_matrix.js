@@ -343,19 +343,6 @@ odoo.define('web_widget_x2many_2d_matrix.widget', function (require) {
             })
         },
 
-        start: function()
-        {
-            var self = this;
-            this.$el.find('.edit').on(
-                'change', self.proxy(this.xy_value_change));
-            this.compute_totals();
-            this.setup_many2one_axes();
-            this.on("change:effective_readonly",
-                    this, this.proxy(this.effective_readonly_change));
-            this.effective_readonly_change();
-            return this._super();
-        },
-
         xy_value_change: function(e)
         {
             var $this = $(e.currentTarget),
